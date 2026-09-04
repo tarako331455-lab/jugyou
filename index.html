@@ -2,73 +2,204 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>自己紹介ページ</title>
-    <subtitle>Self Introduction</subtitle>
+    <title>Tarako's Profile - 自己紹介ページ</title>
+    <style>
+        /* 全体のベース設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            background-color: #f0f2f5;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* ヘッダー・ファーストビュー（背景画像エリア） */
+.hero {
+            /* 修正前：background-image: ... url("../images/AdobeStock_1378377098.jpeg"); */
+            /* 修正後：同じフォルダ内なのでファイル名だけにします */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("AdobeStock_1378377098.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 300;
+            opacity: 0.95;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* メインコンテンツのコンテナ */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 60px auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* プロフィールカード */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #e60012; /* 任天堂を意識したアクセントカラー（赤） */
+            border-bottom: 2px solid #e60012;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            font-size: 18px;
+            margin: 12px 0;
+        }
+
+        .profile-info strong {
+            display: inline-block;
+            width: 130px;
+            color: #555;
+        }
+
+        /* ゲームタイトルのリストデザイン */
+        .game-categories {
+            display: grid;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .game-category-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            background-color: #f7f9fa;
+            padding: 6px 12px;
+            border-left: 4px solid #e60012;
+            margin-bottom: 8px;
+        }
+
+        .game-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .game-list li {
+            margin-bottom: 4px;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
 </head>
-
-<div class="bg_test">
-    <div class="bg_test-text">
-        背景画像を設定します
-    </div>
-</div>
-
 <body>
-    <h1>私のプロフィール</h1>
-    <p>名前：Tarako</p>
-    <p>趣味：ゲーム</p>
-    <p>好きなゲーム：ゼルダの伝説時のオカリナ、ゼルダの伝説夢をみる島、ゼルダの伝説ブレスオブザワイルド、ゼルダの伝説ティアーズオブザキングダム、ゼルダの伝説神々のトライフォース、ゼルダの伝説神々のトライフォース２、ゼルダの伝説スカイウォードソード、ゼルダの伝説ムジュラの仮面、ゼルダの伝説知恵のかりもの、ゼルダの伝説大地の汽笛、ゼルダの伝説夢幻の砂時計、Minecraft、ドゴンクエストモンスターズ３、ドラゴンクエストモンスターズジョーカー３、ドラゴンクエスト３、ドラゴンクエスト１１、ドラゴンクエストビルダーズ２、妖怪ウォッチ、妖怪ウォッチ２、妖怪ウォッチ３、妖怪ウォッチバスターズ、ホロウナイト、ホロウナイトシルクソング、バイオハザード２、バイオハザード4、バイオハザード７、バイオハザード８、バイオハザード９、Forager、ゼノブレイド２、ゼノブレイド３、電波人間、UNDERTALE、ポケモンクエスト、ポケモンXY,ポケモンORAS、ポケモンSM、ポケモンSV、プロジェクトセカイ、Arcaea、ブルーアーカイブ、
-    </p>
-    <p>好きな食べ物：海鮮丼</p>
+
+    <!-- ヘッダー（背景画像エリア） -->
+    <header class="hero">
+        <h1>私のプロフィール</h1>
+        <div class="subtitle">Self Introduction</div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <div class="container">
+        
+        <!-- 基本情報カード -->
+        <div class="card profile-info">
+            <h2 class="section-title">About Me</h2>
+            <p><strong>名前：</strong>Tarako</p>
+            <p><strong>趣味：</strong>ゲーム</p>
+            <p><strong>好きな食べ物：</strong>海鮮丼</p>
+        </div>
+
+        <!-- 好きなゲームカード -->
+        <div class="card">
+            <h2 class="section-title">Favorite Games</h2>
+            
+            <div class="game-categories">
+                <div>
+                    <div class="game-category-title">ゼルダの伝説シリーズ</div>
+                    <ul class="game-list">
+                        <li>時のオカリナ / ムジュラの仮面 / 神々のトライフォース / 神々のトライフォース２</li>
+                        <li>夢をみる島 / ブレスオブザワイルド / ティアーズオブザキングダム / スカイウォードソード</li>
+                        <li>知恵のかりもの / 大地の汽笛 / 夢幻の砂時計</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="game-category-title">ドラゴンクエストシリーズ</div>
+                    <ul class="game-list">
+                        <li>ドラゴンクエスト3 / ドラゴンクエスト11 / ドラゴンクエストビルダーズ2</li>
+                        <li>ドラゴンクエストモンスターズ3 / ドラゴンクエストモンスターズジョーカー3</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="game-category-title">妖怪ウォッチシリーズ</div>
+                    <ul class="game-list">
+                        <li>妖怪ウォッチ / 妖怪ウォッチ2 / 妖怪ウォッチ3 / 妖怪ウォッチバスターズ</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="game-category-title">ポケモンシリーズ</div>
+                    <ul class="game-list">
+                        <li>ポケモンXY / ポケモンORAS / ポケモンSM / ポケモンSV / ポケモンクエスト</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="game-category-title">バイオハザードシリーズ</div>
+                    <ul class="game-list">
+                        <li>バイオハザード2 / バイオハザード4 / バイオハザード7 / バイオハザード8 / バイオハザード9</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="game-category-title">ゼノブレイドシリーズ</div>
+                    <ul class="game-list">
+                        <li>ゼノブレイド2 / ゼノブレイド3</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="game-category-title">その他のお気に入りゲーム</div>
+                    <ul class="game-list">
+                        <li>ホロウナイト / ホロウナイト シルクソング / Forager / 電波人間 / UNDERTALE</li>
+                        <li>プロジェクトセカイ / Arcaea / ブルーアーカイブ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Tarako's Profile Page</p>
+    </footer>
 </body>
-
-<style>
-    head {
-        text-align: center;
-    }
-    title {
-        text-align: center;
-        text-size: 40px;
-        font-family: sans-serif
-        font-weight: bold;
-        font-color: yellow;
-    }
-    subtitle {
-        text-align: center;
-        text-size: 20px;
-        text-family: cursive;
-        font-weight: lighter;
-        font-style: italic;
-        font-style: oblique 25deg;
-    }
-
-    body {
-        font-family: meirio;
-        background-color: skyblue;
-        align-items: center;
-    }
-    h1 {
-        text-align: center;
-        text-size: 30px;
-        color: orange;
-    }
-    p {
-        text-align: center;
-        text-size: 25px;
-        text-color: black:
-    }
-    .bg_test-text {
-    border:  solid 1px;                             /* 枠線指定 */
-    display:  inline-block;                         /* インラインブロックにする */
-    padding: 10px 20px;                             /* 余白指定 */
-    background-color: rgba(255, 255, 255, 0.7);     /* 背景色指定 */
-    }
-    .bg_test {
-    text-align:  center;    /* 文字中央寄せ */
-    padding:  150px;        /* 余白指定 */
-    border: solid 2px;      /* 枠線指定 */
-    }
-    .bg_test {
-    background-image: url("../images/AdobeStock_1378377098.jpeg"); /* 背景画像指定 */
-    }
-</style>
 </html>
